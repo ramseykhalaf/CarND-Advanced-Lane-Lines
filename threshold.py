@@ -10,9 +10,9 @@ master = Tk()
 file_path = filedialog.askopenfilename()
 directory = os.path.split(file_path)[0]
 filename = os.path.basename(file_path)
-file_path = directory + '\\' + filename
+file_path = os.path.join(directory, filename)
 # Make a list of calibration images
-images = glob.glob(directory + '\*.jpg')
+images = glob.glob(directory + '/*.jpg')
 index = images.index(file_path)
 
 img = cv2.imread(file_path)
